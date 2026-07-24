@@ -1,0 +1,17 @@
+# Build and dependency output
+node_modules/
+dist/
+coverage/
+
+# Wrangler local state, secrets, and generated types
+.wrangler/
+.dev.vars*
+worker-configuration.d.ts
+
+# Environment files (example stays committed)
+.env
+.env.*
+!.env.example
+
+# Claude Code local settings
+.claude/settings.local.json

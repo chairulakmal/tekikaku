@@ -1,0 +1,26 @@
+# Run `shopify app config link` to populate client_id from the Partner dashboard.
+# The app must be CLI-created with custom distribution; admin-created custom apps
+# cannot use TOML-managed webhooks (SPEC: Shopify API surface).
+client_id = ""
+name = "Tekikaku"
+handle = "tekikaku"
+application_url = "https://tekikaku.example.workers.dev"
+embedded = true
+
+[access_scopes]
+scopes = "read_orders"
+
+[webhooks]
+api_version = "2026-07"
+
+[[webhooks.subscriptions]]
+topics = ["orders/create"]
+uri = "/webhooks/orders-create"
+
+[[webhooks.subscriptions]]
+topics = ["refunds/create"]
+uri = "/webhooks/refunds-create"
+
+[[webhooks.subscriptions]]
+topics = ["app/uninstalled"]
+uri = "/webhooks/app-uninstalled"

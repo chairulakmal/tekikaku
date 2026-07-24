@@ -1,0 +1,7 @@
+dist
+coverage
+.wrangler
+drizzle
+pnpm-lock.yaml
+worker-configuration.d.ts
+CHANGELOG.md
